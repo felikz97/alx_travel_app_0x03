@@ -55,6 +55,15 @@ INSTALLED_APPS = [
     'corsheaders',  # CORS headers for cross-origin resource sharing
 ]
 
+# Email backend
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # For testing
+EMAIL_HOST = 'smtp.example.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'your_email@example.com'
+EMAIL_HOST_PASSWORD = 'your_password'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'your_email@example.com'
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',

@@ -1,0 +1,10 @@
+# alx_travel_app_0x03/celery.py
+import os
+from celery import Celery
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "alx_travel_app_0x03.settings")
+
+app = Celery("alx_travel_app_0x03")
+app.config_from_object("django.conf:settings", namespace="CELERY")
+app.autodiscover_tasks()
+# alx_travel_app_0x03/__init__.py
